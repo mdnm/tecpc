@@ -10,6 +10,12 @@
         "plugin:react/jsx-runtime"
     ],
     "overrides": [
+        {
+            "files": ["*.config.cjs"],
+            "env": {
+                "node": true
+            }
+        }
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {

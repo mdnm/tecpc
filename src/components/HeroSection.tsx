@@ -1,41 +1,29 @@
-import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
-import heroBg from "../assets/hero-background.jpeg";
+import { ReactComponent as ArrowDown } from "../assets/arrow-down.svg";
+import heroBg from "../assets/hero-bg.png";
 
 export function HeroSection() {
   return (
-    <Container
+    <main
       id="home"
-      data-name="home"
-      className="d-flex justify-content-center align-items-center min-vh-100-navbar position-relative"
       style={{
-        background: `url(${heroBg}) top center`,
-        backgroundSize: "cover",
-        backgroundAttachment: "fixed",
-        backgroundPosition: "center center",
+        backgroundImage: `url(${heroBg})`,
       }}
+      className="pt-24 pb-36 text-white bg-cover bg-center bg-no-repeat"
     >
-      <Container
-        fluid
-        className="d-flex flex-column align-items-center justify-content-center top-0 bottom-0 position-absolute"
-        style={{
-          background: "rgba(0, 0, 0, 0.3)",
-        }}
-      >
-        <h1 className="text-light fw-bolder fs-1 fs-lg-hero text-center px-2">
-          Physical & Mental Training a Piacenza
-        </h1>
-        <p className="text-light fs-4 fs-lg-2 text-center">
-          Forza, Disciplina, Coraggio, Fitness
+      <div className="max-w-lg ml-64">
+        <h1 className="font-bold text-6xl mb-3">Rápido, Eficiente e Seguro</h1>
+        <p className="text-lg mb-12">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi quam id
+          varius ipsum scelerisque faucibus at id. Metus ante nulla consequat
+          faucibus ornare ultricies. Morbi quam ac erat.
         </p>
-        <Button
-          variant="a"
+        <a
           href="#contact"
-          className="btn btn-primary text-uppercase py-2 px-4 rounded-pill fs-6 fs-lg-5 mt-5"
+          className="max-w-max flex justify-between items-center font-bold px-3 py-3.5 rounded-md bg-indigo-800 hover:bg-indigo-900 transition-colors text-white gap-2"
         >
-          Iscriviti adesso
-        </Button>
-      </Container>
-    </Container>
+          Nossos Serviços <ArrowDown />
+        </a>
+      </div>
+    </main>
   );
 }

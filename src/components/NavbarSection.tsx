@@ -1,52 +1,45 @@
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import logo from "../assets/logo.png";
+import { ReactComponent as ArrowRight } from "../assets/arrow-right.svg";
+import { ReactComponent as Logo } from "../assets/logo.svg";
+import { ReactComponent as Phone } from "../assets/phone.svg";
 
 const navBarItems = [
   { href: "#home", label: "Home" },
-  { href: "#services", label: "Servizi" },
-  { href: "#why-us", label: "Perchè Noi" },
-  { href: "#sponsors", label: "Sponsors" },
+  { href: "#sobre-nos", label: "Empresa" },
+  { href: "#servicos", label: "Serviços" },
   { href: "#faq", label: "F.A.Q" },
-  {
-    href: "#contact",
-    label: "Iscriviti",
-    className: "text-light bg-primary rounded ps-2 ms-2",
-  },
+  { href: "#contato", label: "Contato" },
 ];
 
-const navBarItemsDefaultClasses = "px-2";
-
-export function NavbarSection({ currentSection }: { currentSection: string }) {
+export function NavbarSection() {
   return (
-    <Navbar bg="white" expand="lg" sticky="top" className="py-3 shadow">
-      <Container>
-        <Navbar.Brand href="#home" aria-label="Yama Arashi Logo">
-          <img src={logo} height="45" alt="yama arashi logo" />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbar" />
-        <Navbar.Collapse id="navbar">
-          <Nav
-            as="ul"
-            activeKey={`#${currentSection}`}
-            className="ms-auto fw-bold"
+    <div className="flex items-center py-8 px-9 shadow-md">
+      <a href="#home" aria-label="Logo da TECPC">
+        <Logo />
+      </a>
+      <div aria-controls="navbar" />
+      <div id="navbar" className="ml-20 grow flex justify-between items-center">
+        <ul className="flex items-center gap-8">
+          {navBarItems.map((navBarItem) => (
+            <li key={navBarItem.href}>
+              <a href={navBarItem.href} className="font-bold">
+                {navBarItem.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <div className="flex items-center gap-8">
+          <a
+            href="#contato"
+            className="flex justify-between items-center font-bold px-3 py-3.5 rounded-md bg-indigo-800 hover:bg-indigo-900 transition-colors text-white gap-2"
           >
-            {navBarItems.map((navBarItem) => (
-              <Nav.Item as="li" key={navBarItem.href}>
-                <Nav.Link
-                  href={navBarItem.href}
-                  className={`${navBarItemsDefaultClasses} ${
-                    navBarItem.className ?? ""
-                  }`}
-                >
-                  {navBarItem.label}
-                </Nav.Link>
-              </Nav.Item>
-            ))}
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+            Faça um orçamento <ArrowRight />
+          </a>
+          <div className="flex items-center gap-2">
+            <Phone />
+            <span className="font-mono text-xl">(19) 993932319</span>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
