@@ -1,19 +1,17 @@
+import { ReactComponent as Whatsapp } from "../assets/whatsapp.svg";
+
 export function WhatsappButton() {
   return (
     <a
-      href="https://api.whatsapp.com/send?phone=393516858728"
+      href="https://api.whatsapp.com/send/?phone=5519993932319"
       target="_blank"
-      className="position-fixed text-reset text-decoration-none rounded-circle d-flex justify-content-center align-items-center"
-      style={{
-        width: "64px",
-        height: "64px",
-        bottom: "20px",
-        right: "20px",
-        backgroundColor: "#25D366",
-      }}
+      className="fixed rounded-full flex justify-center items-center w-16 h-16 bottom-5 right-5 bg-green-300 hover:bg-green-400 transition-colors"
+      // style={{
+      //   backgroundColor: "#25D366",
+      // }}
       rel="noreferrer"
     >
-      <i className="bi bi-whatsapp text-white fs-2"></i>
+      <Whatsapp />
     </a>
   );
 }

@@ -1,76 +1,54 @@
-import Card from "react-bootstrap/Card";
-import Container from "react-bootstrap/Container";
-
-import fitness from "../assets/fitness.png";
-import martialArts from "../assets/martial-arts.png";
-import olympicWeightLifting from "../assets/olympic-weightlifting.png";
+import poliueiraGenerica from "../assets/aplicacao-poliureia-generica.jpg";
+import poliueiraEmMineracao from "../assets/aplicacao-poliureia-mineracao.jpg";
+import poliueiraEmPavimento from "../assets/aplicacao-poliureia-pavimento.jpeg";
 
 const services = [
   {
-    image: martialArts,
-    altText: "Arti Marziali",
-    imageStyle: {
-      width: "65px",
-      height: "65px",
-    },
-    title: "Arti Marziali",
+    title: "PROJEÇÕES EM POLIUREIA",
+    image: poliueiraGenerica,
     description:
-      "Imparare l'educazione e la disciplina divertendosi attraverso le Arti Marziali è il principio fondamentale attorno al quale è stata fondata la nostra scuola.",
+      "Equipe Certificada e com formação  na aplicação de Poliureia, tanto para impermeabilização como para revestimentos.",
   },
   {
-    image: fitness,
-    altText: "Fitness",
-    imageStyle: {
-      width: "38px",
-      height: "75px",
-    },
-    title: "Fitness",
+    title: "PAVIMENTOS INDUSTRIAIS",
+    image: poliueiraEmPavimento,
     description:
-      "Palestra Fitness dedicata, dotata di attrezzature specifiche e personale qualificato. Vieni a prenderti cura della salute del tuo corpo.",
+      "Aplicamos em pavimentos antiderrapantes de alta resistência para armazéns ou zonas de carga.",
   },
   {
-    image: olympicWeightLifting,
-    altText: "Pesistica Olimpica",
-    imageStyle: { width: "48px", height: "70px" },
-    title: "Pesistica Olimpica",
+    title: "POLIUREIA NO SETOR DE MINERAÇÃO",
+    image: poliueiraEmMineracao,
     description:
-      "Forza, tecnica e costanza sono alla base di questo sport magnifico. Trova e supera i tuoi limiti sotto la guida dei nostri istruttori qualificati.",
+      "O setor de mineração é caracterizado por atividades sob alta pressão, temperatura e materiais abrasivos. Portanto, a vedação à indústria desse segmento é fator fundamental para proteção de equipamentos, segurança de colaboradores e economia para empresa. Em comparação com sistemas convencionais de proteção, os elastômeros de alta performance, aumentam a produtividade e diminuem drasticamente o tempo e a frequência de manutenção. Particularmente nas caçambas, o uso da poliureia tem um benefício adicional: aumenta a produtividade do caminhão devido à redução de contrafluxo na descarga do material. Isso acontece pois o material desliza com facilidade devido ao mínimo coeficiente de fricção na superfície.",
   },
 ];
 
 export function ServicesSection() {
   return (
-    <Container
-      id="services"
-      data-name="services"
-      className="d-flex flex-column justify-content-center align-items-center min-vh-100-navbar pt-5"
-    >
-      <h2 className="fs-1 fw-bold text-center">Servizi</h2>
-      <Container className="d-flex justify-content-center align-items-center gap-4 flex-wrap mt-5 pb-5">
-        {services.map((service) => (
-          <Card
-            style={{ maxWidth: "390px", height: "280px" }}
-            key={service.title}
-            className="d-flex flex-column justify-content-center align-items-center shadow"
-          >
-            <Card.Img
-              style={{
-                ...service.imageStyle,
-              }}
-              variant="top"
-              src={service.image}
-              className="mt-4"
-              alt={service.altText}
-            />
-            <Card.Body className="text-center">
-              <Card.Title className="fw-bold fs-3 mt-3">
+    <section id="servicos" className="py-32 bg-gray-100">
+      <div className="max-w-screen-xl mx-auto">
+        <h2 className="text-indigo-800 font-bold text-5xl text-center mb-8">
+          Serviços prestados
+        </h2>
+        <div className="flex justify-between items-baseline gap-8 mb-16">
+          {services.map((service) => (
+            <div
+              className="w-1/3 flex flex-col rounded-md shadow-md bg-white"
+              key={service.title}
+            >
+              <span className="font-bold bg-indigo-800 text-white text-center py-3 rounded-t-md">
                 {service.title}
-              </Card.Title>
-              <Card.Text>{service.description}</Card.Text>
-            </Card.Body>
-          </Card>
-        ))}
-      </Container>
-    </Container>
+              </span>
+              <img
+                className="max-h-48 object-cover"
+                src={service.image}
+                alt="test"
+              />
+              <p className="mt-3 px-4 pb-6">{service.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
