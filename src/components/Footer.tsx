@@ -17,7 +17,7 @@ export function Footer() {
       <div className="bg-white pt-4 pb-10">
         <div className="flex justify-center items-center flex-wrap">
           <div>
-            © Copyright <span className="font-bold">TEC PC</span>.
+            © Copyright <span className="font-bold">TECPC</span>.
           </div>
           {/* <div>
                 Made in Italy 🇮🇹 by{"  "}

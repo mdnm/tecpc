@@ -37,6 +37,7 @@ export function NavbarSection() {
           aria-controls="navbar"
           type="button"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-hidden={!isWithMobileScreenSize}
         >
           {isMobileMenuOpen ? (
             <ClosedMenuIcon className="w-9 h-9" />
