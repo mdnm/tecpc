@@ -5,10 +5,7 @@ export function WhatsappButton() {
     <a
       href="https://api.whatsapp.com/send/?phone=5519993932319"
       target="_blank"
-      className="fixed rounded-full flex justify-center items-center w-16 h-16 bottom-5 right-5 bg-green-300 hover:bg-green-400 transition-colors"
-      // style={{
-      //   backgroundColor: "#25D366",
-      // }}
+      className="hidden md:flex fixed rounded-full justify-center items-center w-16 h-16 bottom-5 right-5 bg-green-wpp hover:bg-green-400 transition-colors"
       rel="noreferrer"
     >
       <Whatsapp />

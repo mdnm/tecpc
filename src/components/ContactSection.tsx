@@ -23,19 +23,19 @@ const contacts = [
 export function ContactSection() {
   return (
     <section className="bg-gray-100 py-32" id="contato">
-      <div className="max-w-screen-xl mx-auto">
+      <div className="w-full md:max-w-screen-xl px-4 mx-auto">
         <h2 className="text-indigo-800 font-bold text-5xl text-center mb-8">
           Contato
         </h2>
-        <div className="flex justify-between items-start">
-          <div className="flex items-center gap-3">
+        <div className="flex flex-col md:flex-row justify-between items-stretch md:items-start">
+          <div className="flex flex-col lg:flex-row items-stretch md:items-center gap-3 w-full md:w-1/2">
             {contacts.map((contact) => {
               const Icon = contact.icon;
 
               return (
                 <a
                   key={contact.contactLabel}
-                  className="flex flex-col items-center shadow-md bg-white hover:shadow-lg transition-colors rounded-md px-4 py-6 gap-6"
+                  className="flex flex-col items-center shadow-md bg-white hover:shadow-lg transition-colors rounded-md px-4 py-6 gap-6 md:w-52 lg:w-auto"
                   href={contact.contactLink}
                 >
                   <Icon className="w-7 h-7" />
@@ -45,7 +45,7 @@ export function ContactSection() {
             })}
           </div>
           <form
-            className="flex flex-col gap-3 w-1/2"
+            className="mt-8 md:mt-0 flex flex-col gap-3 w-full md:w-1/2"
             action="mailto:danilo@tecpc.com.br"
             method="post"
             encType="text/plain"
@@ -69,7 +69,7 @@ export function ContactSection() {
               name="mensagem"
             />
             <button
-              className="mt-4 bg-green-700 hover:bg-green-800 transition-colors text-white rounded-md max-w-max self-end px-3 py-4"
+              className="w-full mt-4 bg-green-700 hover:bg-green-800 transition-colors text-white rounded-md md:max-w-max md:self-end px-3 py-4"
               type="submit"
             >
               Enviar uma mensagem

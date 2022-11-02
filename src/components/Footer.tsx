@@ -3,7 +3,7 @@ import { ReactComponent as Logo } from "../assets/logo.svg";
 export function Footer() {
   return (
     <>
-      <footer className="flex flex-col max-w-screen-xl mx-auto bg-white pt-10 pb-5">
+      <footer className="flex flex-col items-center md:items-stretch px-4 w-full md:max-w-screen-xl mx-auto bg-white pt-10 pb-5">
         <p className="font-bold mb-4">
           <Logo />
         </p>
