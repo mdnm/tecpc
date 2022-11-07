@@ -1,5 +1,27 @@
 import { ReactComponent as ArrowDown } from "../assets/arrow-down.svg";
+import egdLogo from "../assets/egd-logo.png";
+import ejaLogo from "../assets/eja-logo.jpeg";
+import estruturelLogo from "../assets/estruturel-logo.png";
+import geLogo from "../assets/ge-logo.jpeg";
+import hitachiLogo from "../assets/hitachi-logo.png";
+import keppelLogo from "../assets/keppel-logo.png";
+import kionLogo from "../assets/kion-logo.png";
+import romiLogo from "../assets/romi-logo.png";
 import { Button } from "./Button";
+
+const partners = [
+  {
+    logo: kionLogo,
+    company: "Kion",
+  },
+  { logo: hitachiLogo, company: "Hitachi" },
+  { logo: geLogo, company: "General Electric" },
+  { logo: romiLogo, company: "Romi" },
+  { logo: keppelLogo, company: "Keppel" },
+  { logo: ejaLogo, company: "EJA" },
+  { logo: egdLogo, company: "EGD" },
+  { logo: estruturelLogo, company: "Estruturel" },
+];
 
 export function AboutUsSection() {
   return (
@@ -47,6 +69,19 @@ export function AboutUsSection() {
         tanto em impermeabilização como para revestimentos, oferecendo o que há
         de melhor para o mercado de mineração.
       </p>
+      <h3 className="text-indigo-800 font-bold text-3xl text-center mb-3">
+        Nossos Clientes
+      </h3>
+      <div className="flex flex-wrap items-center justify-center gap-10 mb-16">
+        {partners.map((partner) => (
+          <img
+            src={partner.logo}
+            alt={`${partner.company} logo`}
+            key={partner.company}
+            className="max-w-[100px] md:max-w-[200px]"
+          />
+        ))}
+      </div>
       <Button href="#contato" className="md:max-w-max mx-auto">
         Consulte-nos agora <ArrowDown />
       </Button>
