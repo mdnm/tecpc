@@ -9,6 +9,7 @@ const services = [
     title: "Caminhões e vagões",
     image: {
       url: poliueiraEmCaminhao,
+      alt: "Aplicação de Políureia em caminhões",
     },
     description: (
       <>
@@ -33,6 +34,7 @@ const services = [
     title: "Pisos e pavimentos",
     image: {
       url: poliueiraEmPavimento,
+      alt: "Aplicação de Políureia em pavimentos",
     },
     description: (
       <>
@@ -59,6 +61,7 @@ const services = [
     image: {
       url: poliueiraEmMoinho,
       additionalClasses: "object-bottom",
+      alt: "Moinho de bola com Políureia aplicada",
     },
     description: (
       <>
@@ -102,7 +105,8 @@ export function ServicesSection() {
                   service.image.additionalClasses || ""
                 }`}
                 src={service.image.url}
-                alt="test"
+                alt={service.image.alt}
+                loading="lazy"
               />
               <p className="mt-3 px-4 pb-6">{service.description}</p>
               <Button href="#contato" className="rounded-t-none">

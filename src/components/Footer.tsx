@@ -19,16 +19,16 @@ export function Footer() {
           <div>
             © Copyright <span className="font-bold">TECPC</span>.
           </div>
-          {/* <div>
-                Made in Italy 🇮🇹 by{"  "}
-                <a
-                  href="https://www.linkedin.com/in/mateusdnm/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Mateus De Nardo
-                </a>
-              </div> */}
+          <div>
+            Made by{"  "}
+            <a
+              href="https://www.linkedin.com/in/mateusdnm/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Mateus De Nardo
+            </a>
+          </div>
         </div>
       </div>
     </>

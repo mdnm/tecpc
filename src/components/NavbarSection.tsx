@@ -37,7 +37,11 @@ export function NavbarSection() {
           aria-controls="navbar"
           type="button"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-hidden={!isWithMobileScreenSize}
+          aria-label={
+            isMobileMenuOpen
+              ? "Botão para fechar menu"
+              : "Botão para abrir menu"
+          }
         >
           {isMobileMenuOpen ? (
             <ClosedMenuIcon className="w-9 h-9" />
@@ -46,39 +50,39 @@ export function NavbarSection() {
           )}
         </button>
       </div>
-      {(isMobileMenuOpen || !isWithMobileScreenSize) && (
-        <nav
-          id="navbar"
-          className="mt-4 md:mt-0 md:ml-10 xl:ml-20 grow flex justify-between items-center flex-col md:flex-row"
-        >
-          <ul className="flex items-center gap-3 xl:gap-8 flex-col md:flex-row">
-            {navBarItems.map((navBarItem) => (
-              <li key={navBarItem.href}>
-                <a
-                  href={navBarItem.href}
-                  className={`font-bold ${
-                    navBarItem.hideOnLg && "inline md:hidden xl:inline"
-                  }`}
-                >
-                  {navBarItem.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <div className="w-full md:w-auto flex md:items-center gap-8 mt-4 md:mt-0">
-            <Button
-              href="#contato"
-              className="w-full md:w-auto rounded-none md:rounded-md h-20 md:h-auto mb-[-2rem] md:mb-0"
-            >
-              Faça um orçamento <ArrowRight />
-            </Button>
-            <div className="items-center gap-2 hidden lg:flex">
-              <PhoneWithCircle />
-              <span className="font-mono text-xl">(19) 993932319</span>
-            </div>
+      <nav
+        id="navbar"
+        className={`${
+          !isMobileMenuOpen && isWithMobileScreenSize && "hidden"
+        } mt-4 md:mt-0 md:ml-10 xl:ml-20 grow flex justify-between items-center flex-col md:flex-row`}
+      >
+        <ul className="flex items-center gap-3 xl:gap-8 flex-col md:flex-row">
+          {navBarItems.map((navBarItem) => (
+            <li key={navBarItem.href}>
+              <a
+                href={navBarItem.href}
+                className={`font-bold ${
+                  navBarItem.hideOnLg && "inline md:hidden xl:inline"
+                }`}
+              >
+                {navBarItem.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <div className="w-full md:w-auto flex md:items-center gap-8 mt-4 md:mt-0">
+          <Button
+            href="#contato"
+            className="w-full md:w-auto rounded-none md:rounded-md h-20 md:h-auto mb-[-2rem] md:mb-0"
+          >
+            Faça um orçamento <ArrowRight />
+          </Button>
+          <div className="items-center gap-2 hidden lg:flex">
+            <PhoneWithCircle />
+            <span className="font-mono text-xl">(19) 993932319</span>
           </div>
-        </nav>
-      )}
+        </div>
+      </nav>
     </div>
   );
 }

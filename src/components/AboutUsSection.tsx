@@ -79,6 +79,7 @@ export function AboutUsSection() {
             alt={`${partner.company} logo`}
             key={partner.company}
             className="max-w-[100px] md:max-w-[200px]"
+            loading="lazy"
           />
         ))}
       </div>
